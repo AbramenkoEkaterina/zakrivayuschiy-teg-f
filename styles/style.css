@@ -151,10 +151,8 @@
 }
 
 .card__like-button {
-   min-inline-size: 130px;
-   /*
-   padding: 9px 0;*/
-  padding: 9px 35px 5px 35px;
+   inline-size: 130px;
+   padding: 6px 0px;
   border: 2px solid #000000;
 }
 
@@ -301,10 +299,11 @@ animation: filter-image 5s linear infinite; /*смена цветов в ани�
 .button {
   border: 2px solid #000000;
   cursor: pointer;
-  background-color: #fff;
+  background-color: var(--background-color-botton);
   transition: box-shadow 0.3s ease;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /*всё, что выходит за границы кнопки, будет обрезано.*/
+   color: var(--original-text-color); /* начальный цвет для текста и SVG */
 }
 
 .button:focus {
@@ -313,36 +312,82 @@ animation: filter-image 5s linear infinite; /*смена цветов в ани�
 
 .button:focus,
 .button:focus-visible {
-  box-shadow: 2px 2px 0 #000000;
+  box-shadow: 2px 2px 0 #000000; /*задали тень при использовании кнопки*/
 }
 
 .button::before {
   content: '';
-  position: absolute;
-  inset: 0;
+  position: absolute; /*это*/
+  inset: 0;/* и это полностью покрывает кнопку*/
   background-color: #000;
-  transform: translateX(-100%); /* Начинается вне кнопки */
+  transform: translateX(-100%); /* Начинается вне кнопки слева направо */
   transition: transform 0.5s ease-in-out;
-  z-index: 1; /* Ниже текста */
+  z-index: 1; /* Ниже текста, но над фоном */
 }
 
 .button:hover::before {
   transform: translateX(0); /* Заезжает внутрь */
 }
 
-.button__text {
+.button__text,
+.floppy {
   position: relative;
   z-index: 2; /* Выше псевдоэлемента */
   mix-blend-mode: difference; /* Меняет цвет при наложении */
-  color: #fff; /* Белый текст */
+  color: var(--final-text-color); 
 }
 
 .card__icon-button {
-  border: none; /*кнопка с сердцем*/
+  border: 2px solid transparent; /*кнопка с сердцем сделали ей обводку, но ее не видно*/
+  padding: 0px;
+  background-color: transparent;
+  transition: border 0.3s ease; /* работает и при фокусе, и при его снятии */
+  width: 39px;
+  height: 36px;
 }
 
-.button:hover
-{}
+.card__icon-button:focus-visible {
+  border: 2px solid black;
+}
+
+.sparks {
+  opacity: 0;/*искры скрыли*/
+}
+
+.core {
+  /*сердцевина*/
+  transition: fill 0.3s 0.03s linear; /*линейный, с длительностью 0.3s и небольшой задержкой 0.03s*/
+}
+
+.contour{
+  /*контур*/
+  transition: fill 0.1s linear;
+}
+
+.main-body {
+  /*основное тело сердца;*/
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--core-fill-hover);
+  transition-delay: 0s; /* отменить задержку*/
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--main-body-fill-hover);
+  transition-delay: 0.05s; /* добавить задержку*/
+}
+
+.card__icon-button:active .core {
+  fill: var(--core-fill-active);
+  transition-delay: 0s; /* отменить задержку*/
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--main-body-fill-active);
+  transition-delay: 0.05s; /* добавить задержку*/
+}
 
 /* Десктоп: увеличиваем отступы */
 @media (width >= 1440px) {
