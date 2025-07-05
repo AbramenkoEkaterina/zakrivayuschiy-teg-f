@@ -215,8 +215,11 @@ body:has(.modal[open]) {
 }
 
 .modal[open]::backdrop {
-  background-color: rgba(0, 0, 0, 0.75);  /*тут еще переделать это из примера взято*/
-  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  transition: opacity 0.7s ease;
 }
 
 .modal__content {
@@ -339,45 +342,6 @@ animation: filter-image 5s linear infinite; /*смена цветов в ани�
 
 .card__icon-button:focus-visible {
   border: 2px solid black;
-}
-
-.sparks {
-  opacity: 0;/*искры скрыли*/
-}
-
-.core {
-  /*сердцевина*/
-  transition: fill 0.3s 0.03s linear; /*линейный, с длительностью 0.3s и небольшой задержкой 0.03s*/
-}
-
-.contour {
-  /*контур*/
-  transition: fill 0.1s linear;
-}
-
-.main-body {
-  /*основное тело сердца;*/
-  transition: fill 0.3s linear;
-}
-
-.card__icon-button:hover .core {
-  fill: var(--core-fill-hover);
-  transition-delay: 0s; /* отменить задержку*/
-}
-
-.card__icon-button:hover .main-body {
-  fill: var(--main-body-fill-hover);
-  transition-delay: 0.05s; /* добавить задержку*/
-}
-
-.card__icon-button:active .core {
-  fill: var(--core-fill-active);
-  transition-delay: 0s; /* отменить задержку*/
-}
-
-.card__icon-button:active .main-body {
-  fill: var(--main-body-fill-active);
-  transition-delay: 0.05s; /* добавить задержку*/
 }
 
 /* Десктоп: увеличиваем отступы */
