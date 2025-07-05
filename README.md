@@ -3,4 +3,4 @@
 git@github.com:AbramenkoEkaterina/zakrivayuschiy-teg-f.git
 
 Ссылка на GitHub Pages
-abramenkoekaterina.github.io.
+ https://abramenkoekaterina.github.io/zakrivayuschiy-teg-f/
