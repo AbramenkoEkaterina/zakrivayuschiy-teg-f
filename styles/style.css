@@ -213,6 +213,7 @@
 
 /* ------------------------------Стили для модального окна-------------- */
 .modal {
+  margin: auto;
   padding: 30px 40px;
   display: flex;
   flex-direction: column;
