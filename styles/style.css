@@ -188,7 +188,7 @@
 }
 
 .button-form-save {
-  padding: 55px 32px 100px 33px;
+  padding: 50px 32px 100px 33px;
    display: flex;
   justify-content: center;
 } 
@@ -200,7 +200,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 18px;
   border: 2px solid #000000;
   min-inline-size: 306px;
@@ -215,8 +215,10 @@
 .modal {
   margin: auto;
   padding: 30px 40px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto auto;
+  /*
+  flex-direction: column;*/
   border: 2px solid #000000;
   max-inline-size: clamp(341px, calc(100vw - 80px), 353px);
   transition: opacity 0.3s ease-in-out;
@@ -389,7 +391,7 @@ animation: filter-image 5s linear infinite; /*смена цветов в ани�
 }
 
 .modal {
-  padding: 29.5px 28.5px 29px 28.5px;
+  padding: 29.5px 29.5px 30.5px 28.5px;
 }
 
 .menu-button-ok {
