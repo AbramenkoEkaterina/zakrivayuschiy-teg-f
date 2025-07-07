@@ -9,6 +9,14 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+@keyframes filter-image {
+  to {
+    filter: hue-rotate(360deg); /*для фильтра на третьей картике*/
+  }
+}
+
+
 @keyframes scale-heart {
   0% {
     transform: scale(1);
