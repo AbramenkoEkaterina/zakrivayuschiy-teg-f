@@ -188,9 +188,8 @@
 }
 
 .button-form-save {
-  outline: 1px red solid;
   padding: 50px 32px 100px 33px;
-   display: flex;
+  display: flex;
   justify-content: center;
 } 
 
